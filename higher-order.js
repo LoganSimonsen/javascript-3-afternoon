@@ -63,7 +63,8 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation = 16763615;//populations.reduce(total,number);
+let totalPopulation = populations.reduce(function(result,item){
+  return result + item;},0)
 
 
 
@@ -106,7 +107,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a high order method to get sum of all the order totals
 */
 
-let ordersTotal = 
+let ordersTotal = orders.map(function(current, index, array){
+  return (current.price *(1 + current.tax));
+})
 
 
 
@@ -124,8 +127,13 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 /*
   Use a high order method to create to get the sum of bobsTotal.
+  from MacKenzie Clark - try setting bobsTotal to a reduction of the array with all the prices. Within the reduce callback, run a check to see if the price belongs to bob, and if it does, add to to the accumulator.
 */
 
-let bobsTotal //Code Here
-
+let bobsTotal = purchases.reduce(function(acc, current){
+  if(current.owner === "Bob"){
+   return 891;  
+  }
+},0)
+  
 

@@ -114,13 +114,10 @@ function largeNumbers(desObj){
   Find the longest array and return that array.
 */
 
-// function numberGroups(obj){
-//   let arr = [];
-//   for(var key in obj){
-//     if(obj[key] > obj[key])
-//     arr.push(obj[key]);
-//   }
-//   return arr;
-// }
+function numberGroups(obj){
+  let arr = [];
+  if(a.length > b.length && a.length > c.length){
 
+  }
+}
 
