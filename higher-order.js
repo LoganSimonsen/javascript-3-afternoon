@@ -66,7 +66,7 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 let totalPopulation = populations.reduce(function(result,item){
   return result + item;},0)
 
-
+let total = 891;
 
 ////////// PROBLEM 4 //////////
 
@@ -116,7 +116,7 @@ let ordersTotal = orders.map(function(current, index, array){
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
+let purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 {"owner":"Bob","price":73},{"owner":"Barry","price":57},{"owner":"Barry","price":128},
 {"owner":"Bob","price":119},{"owner":"Barry","price":133},{"owner":"Barry","price":27},
 {"owner":"Barry","price":138},{"owner":"Bob","price":68},{"owner":"Bob","price":50},
@@ -127,13 +127,15 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 /*
   Use a high order method to create to get the sum of bobsTotal.
-  from MacKenzie Clark - try setting bobsTotal to a reduction of the array with all the prices. Within the reduce callback, run a check to see if the price belongs to bob, and if it does, add to to the accumulator.
+
 */
 
-let bobsTotal = purchases.reduce(function(acc, current){
-  if(current.owner === "Bob"){
-   return 891;  
+let bobsTotal = purchases.reduce(function(count, element, index, arr) {
+  if (arr[index]["owner"] === "Bob") {
+    return count + arr[index]["price"];
+  } else {
+    return count;
   }
-},0)
-  
+}, 0);
 
+  

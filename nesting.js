@@ -9,7 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var employees = [
+let employees = [
   {
     "firstName": "Von",
     "lastName": "Budibent",
@@ -50,18 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-// function employeeUpdater(){
-//   for(var key in employees){
-//     if(employees["firstName"] === "Theo"){
-//       delete employees["Theo"];
-//     }
-//     else if(employees["firstName"] === "Lorie"){
-//       delete employees["Lorie"];
-//     }
-//   }
-//   return employees;
-// }
 
+function employeeUpdater() {
+  for (i = 0; i < employees.length; i++) {
+    if (employees[i]["firstName"] === "Theo") {
+      employees.splice(i, 1);
+    } else if (employees[i]["firstName"] === "Lorie") {
+      employees[i]["department"] = "HR";
+    }
+  }
+  return employees;
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -77,7 +76,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arr) {
+  let temp = [];
+  for (i = 0; i < arr.length; i++) {
+    if (temp.indexOf(arr[i]) === -1) {
+      temp.push(arr[i]);
+    }
+  }
+  arr = temp;
+  return arr;
+}
 
 
 
@@ -106,8 +114,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -147,7 +155,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner() {
+  for (i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i]["atFaultForAccident"] = false;
+  }
+  return myCar;
+}
 
 
 
@@ -166,6 +179,16 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
+function looper() {
+  for (i = 0; i < numsArr.length; i++) {
+    for (x = 0; x < numsArr[i].length; x++) {
+      if (numsArr[i][x] % 2 === 0) {
+        numsArr[i][x] = "even";
+      } else {
+        numsArr[i][x] = "odd";
+      }
+    }
+  }
+  return numsArr;
+}
 
